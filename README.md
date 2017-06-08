@@ -33,9 +33,9 @@ The easiest way to install TensorFlow as well as NumPy, Jupyter, and matplotlib 
     source activate tensorflow
     ```
 
-4. Download and unzip [this entire repository from GitHub](https://github.com/jonbruner/generative-adversarial-networks), either interactively, or by entering
+4. If you haven't done so already, download and unzip [this entire repository from GitHub](https://github.com/adeshpande3/LSTM-Sentiment-Analysis), either interactively, or by entering
     ```bash
-    git clone https://github.com/jonbruner/generative-adversarial-networks.git
+    git clone https://github.com/adeshpande3/LSTM-Sentiment-Analysis
     ```
 
 5. Use `cd` to navigate into the top directory of the repo on your machine
