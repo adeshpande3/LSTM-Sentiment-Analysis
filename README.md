@@ -1,6 +1,6 @@
 # Sentiment Analysis with LSTMs
 
-This repository contains the iPython notebook and training data to accompany the O'Reilly tutorial on sentiment analysis with LSTMs in Tensorflow (insert link later). See the original tutorial (insert link later) to run this code in a pre-built environment on O'Reilly's servers with cell-by-cell guidance, or run these files on your own machine.
+This repository contains the iPython notebook and training data to accompany the O'Reilly tutorial on sentiment analysis with LSTMs in Tensorflow (insert link later). See the original tutorial (insert link later) to run this code in a pre-built environment on O'Reilly's servers with cell-by-cell guidance, or run these files on your own machine. There is also another file called `Pre-Trained LSTM.ipynb` which allows you to input your own text, and see the output of the trained network. 
 
 ## Downloading Data
 Before running the notebook, you'll first need to download all data we'll be using. This data is located in the `models.tar.gz` and `training_data.tar.gz` tarballs. We will extract these into the same directory as `Oriole LSTM.ipynb`. As always, the first step is to clone the repository.
