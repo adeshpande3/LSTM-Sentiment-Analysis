@@ -16,7 +16,7 @@ Next, we will navigate to the newly created directory and run the following comm
 ## Requirements and Installation
 In order to run [the iPython notebook](Oriole-LSTM.ipynb), you'll need the following libraries. 
 
-* **[TensorFlow](https://www.tensorflow.org/install/) version 1.0 or later**
+* **[TensorFlow](https://www.tensorflow.org/install/) version 1.1 (Currently not supported for 1.2 but working on it)**
 * [NumPy](https://docs.scipy.org/doc/numpy/user/install.html)
 * [Jupyter](https://jupyter.readthedocs.io/en/latest/install.html)
 * [matplotlib](https://matplotlib.org/)
