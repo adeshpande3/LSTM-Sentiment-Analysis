@@ -1,25 +1,55 @@
 # Sentiment Analysis with LSTMs
 
-This repository contains the iPython notebook and training data to accompany the [O'Reilly tutorial](https://www.oreilly.com/learning/perform-sentiment-analysis-with-lstms-using-tensorflow) on sentiment analysis with LSTMs in Tensorflow. See the original tutorial to run this code in a pre-built environment on O'Reilly's servers with cell-by-cell guidance, or run these files on your own machine. There is also another file called `Pre-Trained LSTM.ipynb` which allows you to input your own text, and see the output of the trained network. 
+This repository contains the iPython notebook and training data to accompany the [O'Reilly tutorial](https://www.oreilly.com/learning/perform-sentiment-analysis-with-lstms-using-tensorflow) on sentiment analysis with LSTMs in Tensorflow. See the original tutorial to run this code in a pre-built environment on O'Reilly's servers with cell-by-cell guidance, or run these files on your own machine. There is also another file called `Pre-Trained LSTM.ipynb` which allows you to input your own text, and see the output of the trained network.
 
 ## Downloading Data
 Before running the notebook, you'll first need to download all data we'll be using. This data is located in the `models.tar.gz` and `training_data.tar.gz` tarballs. We will extract these into the same directory as `Oriole LSTM.ipynb`. As always, the first step is to clone the repository.
    ```bash
    git clone https://github.com/adeshpande3/LSTM-Sentiment-Analysis.git
    ```
-Next, we will navigate to the newly created directory and run the following commands. 
+Next, we will navigate to the newly created directory and run the following commands.
    ```bash
    tar -xvzf models.tar.gz
    tar -xvzf training_data.tar.gz
    ```
 
 ## Requirements and Installation
-In order to run [the iPython notebook](Oriole-LSTM.ipynb), you'll need the following libraries. 
+In order to run [the iPython notebook](Oriole-LSTM.ipynb), you'll need the following libraries.
 
 * **[TensorFlow](https://www.tensorflow.org/install/) version 1.1 (Currently not supported for 1.2, 1.3, 1.4 etc but if someone wants to submit a pull request, I'd be open to that :) )**
 * [NumPy](https://docs.scipy.org/doc/numpy/user/install.html)
 * [Jupyter](https://jupyter.readthedocs.io/en/latest/install.html)
 * [matplotlib](https://matplotlib.org/)
+
+### Docker
+With Docker, you could just mount the repository and exec it.
+
+1. Install Docker. Follow the [docker guide](https://docs.docker.com/get-started/#prepare-your-docker-environment).
+
+2. Build docker image
+    ``` bash
+    cd LSTM-Sentiment-Analysis
+    docker build -t="@yourname/tensorflow_1.1.0_py3" .
+    ```
+
+3. Run the container from the image
+    ``` bash
+    docker run -p 8888:8888 --name=tensorflow_yourname_py3 -v /@YourDir/LSTM-Sentiment-Analysis:/LSTM-Sentiment-Analysis -it @yourname/tensorflow_1.1.0_py3
+    ```
+    and visit the URL(http://localhost:8888/)
+
+4. Stop and restart the container
+    ``` bash
+    docker stop tensorflow_yourname_py3
+    docker start tensorflow_yourname_py3
+    docker attach tensorflow_yourname_py3
+    ```
+
+    If jupyter is down, relaunch it by using the command below.
+    ``` bash
+    cd LSTM-Sentiment-Analysis
+    jupyter notebook --ip=0.0.0.0 --allow-root
+    ```
 
 ### Installing Anaconda Python and TensorFlow
 The easiest way to install TensorFlow as well as NumPy, Jupyter, and matplotlib is to start with the Anaconda Python distribution.
