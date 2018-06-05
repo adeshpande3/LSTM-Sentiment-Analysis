@@ -16,10 +16,24 @@ Next, we will navigate to the newly created directory and run the following comm
 ## Requirements and Installation
 In order to run [the iPython notebook](Oriole-LSTM.ipynb), you'll need the following libraries.
 
-* **[TensorFlow](https://www.tensorflow.org/install/) version 1.1 (Currently not supported for 1.2, 1.3, 1.4 etc but if someone wants to submit a pull request, I'd be open to that :) )**
+* **[TensorFlow](https://www.tensorflow.org/install/) version 1.1 (See below for later versions)**
 * [NumPy](https://docs.scipy.org/doc/numpy/user/install.html)
 * [Jupyter](https://jupyter.readthedocs.io/en/latest/install.html)
 * [matplotlib](https://matplotlib.org/)
+
+### TensorFlow 1.2 and later
+
+In order to load the models without errors you need to convert the checkpoints using the converter provided by TensorFlow:
+
+```bash
+wget https://raw.githubusercontent.com/tensorflow/tensorflow/master/tensorflow/contrib/rnn/python/tools/checkpoint_convert.py
+python checkpoint_convert.py models/pretrained_lstm.ckpt-90000 converted-checkpoints/pretrained_lstm-90000.ckpt
+```
+You should also replace the original models folder if you don't want to modify the code:
+```bash
+rm -rf models
+mv converted-checkpoints models
+```
 
 ### Docker
 With Docker, you could just mount the repository and exec it.
