@@ -43,20 +43,20 @@ With Docker, you could just mount the repository and exec it.
 2. Build docker image
     ``` bash
     cd LSTM-Sentiment-Analysis
-    docker build -t="@yourname/tensorflow_1.1.0_py3" .
+    docker build -t="´<choose your name for the image, like my_first_lstm>" .
     ```
 
 3. Run the container from the image
     ``` bash
-    docker run -p 8888:8888 --name=tensorflow_yourname_py3 -v /@YourDir/LSTM-Sentiment-Analysis:/LSTM-Sentiment-Analysis -it @yourname/tensorflow_1.1.0_py3
+    docker run -p 8888:8888 --name=my_first_lstm -v `pwd`:`pwd` -it my_first_lstm
     ```
     and visit the URL(http://localhost:8888/)
 
 4. Stop and restart the container
     ``` bash
-    docker stop tensorflow_yourname_py3
-    docker start tensorflow_yourname_py3
-    docker attach tensorflow_yourname_py3
+    docker stop my_first_lstm
+    docker start my_first_lstm
+    docker attach my_first_lstm
     ```
 
     If jupyter is down, relaunch it by using the command below.
